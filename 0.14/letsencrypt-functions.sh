@@ -45,8 +45,8 @@ function get_field
 				continue
 			fi
 
-			field=$(echo $line | awk -F= '{gsub(" |\t","",$1); print $1}')
-			value=$(echo $line | awk -F= '{gsub(" |\t","",$2); print $2}')
+			field=$(echo $line | awk -F= '{sub(/^[ |\t]*/,"",$1); sub(/[ |\t]*$/,"",$1); print $1}')
+			value=$(echo $line | awk -F= '{sub(/^[ |\t]*/,"",$2); sub(/[ |\t]*$/,"",$2); print $2}')
 
 			if [ "$field" = "$3" ]; then
 				echo $value

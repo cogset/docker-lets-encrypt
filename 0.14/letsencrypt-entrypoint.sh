@@ -54,7 +54,7 @@ if [ ! -f "$CRON_FILE" ]; then
   touch "$CRON_FILE"
 fi
 
-echo "3 2 1 * * root letsencrypt-obtain.sh >> $CRON_FILE" >> "/etc/crontab"
+echo "3 2 1 * * root letsencrypt-renew.sh >> $CRON_FILE" >> "/etc/crontab"
 
 cron
 

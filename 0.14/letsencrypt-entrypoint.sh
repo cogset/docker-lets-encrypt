@@ -22,7 +22,7 @@ if [ "$1" != "tail" ]; then
 fi
 
 shift
-OPTIONS=`getopt -o o:h --long obtain,help -n cron -- "$@"`
+OPTIONS=`getopt -o oh --long obtain,help -n cron -- "$@"`
 if [ $? -ne 0 ]; then
   print_usage
   exit 1

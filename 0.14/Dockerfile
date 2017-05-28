@@ -23,4 +23,4 @@ RUN chmod +x /usr/local/bin/letsencrypt-*.sh
 
 ENTRYPOINT ["letsencrypt-entrypoint.sh"]
 
-CMD ["obtain"]
+CMD ["tail"]

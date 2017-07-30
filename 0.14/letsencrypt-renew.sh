@@ -15,6 +15,6 @@ do
     continue
   fi
 
-  letsencrypt-auto "certonly" "-n" "--agree-tos" "$options"
+  letsencrypt-auto certonly -n --agree-tos $options
 
 done

@@ -44,11 +44,11 @@ while true; do
   esac
 done
 
-if [ $OBTAIN -eq 1 ]; then
-  letsencrypt-obtain.sh
-fi
-
 CRON_FILE="/var/log/letsencrypt/cron.log"
+
+if [ $OBTAIN -eq 1 ]; then
+  letsencrypt-obtain.sh >> $CRON_FILE
+fi
 
 if [ ! -f "$CRON_FILE" ]; then
   touch "$CRON_FILE"
